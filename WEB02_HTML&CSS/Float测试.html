@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>浮动</title>
+  <style type="text/css">
+   #one {
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    float: left;
+   }
+   #clear {
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    /*clear只能影响本身,该属性的值指出了不允许有浮动对象的边。 */
+    
+    /*左右都不允许*/
+    clear: both; 
+    
+    /*右侧不允许*/
+    /*clear: right;*/
+     
+    /*左侧不允许，由于设置左侧不允许有浮动div,当上一级div是浮动且是 left时，此clear只能在div之下布局(注意为什么是之下，因为div是垂直块布局)*/
+    /*clear: left;*/ 
+   }
+   #two {
+    border: 1px solid blue;
+    width: 200px;
+    height: 200px;
+    float: left;
+   }
+  </style>
+ </head>
+ <body>
+  <div id="one"></div>
+  <!--<div id="clear"></div>-->
+  <div id="two"></div>
+  <!--如果不用清除浮动，那么第3个就会和第一二行在一起-->   
+  <div id="clear"></div>
+ </body>
+</html>
